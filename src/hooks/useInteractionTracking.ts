@@ -9,6 +9,7 @@ declare global {
 }
 
 interface TrackingEvent {
+  [key: string]: string;
   element_id: string;
   element_type: string;
   interaction_type: string;
