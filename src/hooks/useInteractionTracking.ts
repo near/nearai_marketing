@@ -1,5 +1,14 @@
 import { useCallback } from 'react';
 
+// Extend Window interface to include rudderAnalytics
+declare global {
+  interface Window {
+    rudderAnalytics?: {
+      track: (event: string, properties: any) => void;
+    };
+  }
+}
+
 interface TrackingEvent {
   element_id: string;
   element_type: string;
@@ -20,8 +29,8 @@ export const useInteractionTracking = () => {
       };
 
       // Send to analytics
-      if (typeof window !== 'undefined' && window.rudderanalytics) {
-        window.rudderanalytics.track('Element Interaction', trackingEvent);
+      if (typeof window !== 'undefined' && window.rudderAnalytics) {
+        window.rudderAnalytics.track('Element Interaction', trackingEvent);
       }
     };
 
