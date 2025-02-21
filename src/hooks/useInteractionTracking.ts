@@ -1,11 +1,10 @@
 import { useCallback } from 'react';
+import type Analytics from '../types/rudderstack-analytics';
 
 // Extend Window interface to include rudderAnalytics
 declare global {
   interface Window {
-    rudderAnalytics?: {
-      track: (event: string, properties: any) => void;
-    };
+    rudderAnalytics: Analytics | undefined;
   }
 }
 
