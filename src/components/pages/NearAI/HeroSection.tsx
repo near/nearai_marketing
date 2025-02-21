@@ -38,27 +38,36 @@ const CTAButton = ({ href, children, primary = false, className = '', external =
 
 const DragonLogo = () => (
   <div className="relative w-32 h-32 mx-auto mb-8">
-    <div className="absolute inset-0 bg-gradient-radial from-[#00EB9A]/20 to-transparent animate-pulse" />
-    <img src="/dragon.svg" alt="Dragon Logo" className="w-full h-full" />
+    {/* Glow effect */}
+    <div className="absolute inset-0 bg-[#00EB9A] rounded-full blur-2xl opacity-20 animate-pulse" />
+    {/* Logo */}
+    <div className="relative w-full h-full">
+      <img src="/dragon-logo.svg" alt="NEAR AI" className="w-full h-full" />
+    </div>
   </div>
+);
+
+const GlowingText = ({ children, className = '' }: { children: React.ReactNode; className?: string }) => (
+  <span className={`text-[#00EB9A] ${className}`}>{children}</span>
 );
 
 const HeroSection = () => {
   return (
-    <div className="relative min-h-screen flex items-center justify-center">
-      {/* Gradient effects */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute inset-0 bg-gradient-radial from-[#00EB9A]/5 to-transparent opacity-30" />
-        <div className="absolute inset-0 bg-gradient-conic from-[#00EB9A]/0 via-[#00EB9A]/5 to-[#00EB9A]/0 animate-slow-spin" />
-      </div>
+    <div className="relative min-h-[90vh] flex flex-col justify-center items-center pt-20 pb-16 px-4">
+      {/* Background glow */}
+      <div className="absolute inset-0 bg-gradient-radial from-[#00EB9A]/5 to-transparent opacity-50" />
 
-      <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-32 pb-24">
-        <h1 className="text-5xl sm:text-6xl font-bold mb-8">
-          The future of AI is <span className="text-[#00EB9A]">User-Owned</span>
+      <div className="max-w-4xl mx-auto text-center relative">
+        <DragonLogo />
+
+        <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 tracking-tight">
+          Building the world's best <GlowingText>truly open AI</GlowingText>.
         </h1>
-        <p className="text-xl text-[#AFD0C5] mb-4 max-w-2xl mx-auto">
-          Build and own the next generation of AI models, agents, and infrastructure.
+
+        <p className="text-xl md:text-2xl text-[#AFD0C5] mb-4">
+          Join the community building the user-owned future of AI.
         </p>
+
         <p className="text-sm text-[#AFD0C5]/60 mb-12">Early alpha. Big vision. Your chance to shape what's next.</p>
 
         <div className="flex flex-wrap justify-center gap-4">
