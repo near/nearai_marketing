@@ -6,6 +6,15 @@ import PageWrapper from '@/components/pages/NearAI/PageWrapper';
 
 const posts = [
   {
+    slug: 'aitp-announcement',
+    title: 'Introducing AITP: Agent Interaction & Transaction Protocol to enable inter-agent payments & communication',
+    excerpt: 'NEAR AI is releasing today a Request for Comments (RFC) of AITP: Agent Interaction and Transaction Protocol, enabling AI agents to communicate securely across trust boundaries.',
+    date: '2025-02-25',
+    author: {
+      name: 'Illia Polosukhin',
+    },
+  },
+  {
     slug: 'proof-of-response-announcement',
     title: 'Announcing Proof of Response',
     excerpt: 'A novel primitive in decentralized systems to guarantee liveness and responsiveness of services',
