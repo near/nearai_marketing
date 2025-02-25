@@ -98,8 +98,23 @@ const ProductSection = () => {
             />
           </div>
 
-          {/* AI Assistant - Right */}
+          {/* Agent Protocol - Right */}
           <div className="flex justify-end w-full min-h-[400px]">
+            <ProductCard
+              title="Agent Protocol (AITP)"
+              description="The open standard for AI agents to connect, act, and transact"
+              features={[
+                'Connect across Web2 and Web3 services',
+                'Open-source and community-driven',
+                'Join the protocol working group',
+              ]}
+              cta={{ text: 'Explore AITP', href: 'https://aitp.dev/' }}
+              trackingId="product_agent_protocol"
+            />
+          </div>
+
+          {/* AI Assistant - Left */}
+          <div className="flex justify-start w-full min-h-[400px] lg:mr-auto lg:pr-16">
             <ProductCard
               title="AI Assistant"
               description="Takes action for you across Web2 and Web3"
@@ -111,21 +126,6 @@ const ProductSection = () => {
               cta={{ text: 'Chat with Assistant', href: 'https://chat.near.ai' }}
               alpha="alpha v2"
               trackingId="product_ai_assistant"
-            />
-          </div>
-
-          {/* Agent Protocol - Left */}
-          <div className="flex justify-start w-full min-h-[400px] lg:mr-auto lg:pr-16">
-            <ProductCard
-              title="Agent Protocol"
-              description="The open standard for AI agents to connect, act, and transact"
-              features={[
-                'Connect across Web2 and Web3 services',
-                'Open-source and community-driven',
-                'Join the protocol working group',
-              ]}
-              cta={{ text: 'Coming Soon', href: '#' }}
-              trackingId="product_agent_protocol"
             />
           </div>
 
