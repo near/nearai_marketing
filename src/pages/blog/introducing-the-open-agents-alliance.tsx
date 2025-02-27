@@ -79,7 +79,7 @@ const OpenAgentsAlliancePost = () => {
 
         <div className="border-l-4 border-[#00EB9A] pl-6 py-2 bg-[#00EB9A]/5 rounded-r-lg">
           <p className="text-lg italic text-[#AFD0C5] mb-4">
-            "Open Agenst Alliance's mission is to ensure Agent infrastructure remains open, permissionless, and decentralized. As the first decentralized cloud, OAA's mission aligns with Akash's, and we're super excited to contribute to this Alliance."
+            "Open Agents Alliance's mission is to ensure Agent infrastructure remains open, permissionless, and decentralized. As the first decentralized cloud, OAA's mission aligns with Akash's, and we're super excited to contribute to this Alliance."
           </p>
           <p className="text-[#00EB9A] font-medium">––Greg Osuri, Founder of Akash</p>
         </div>
