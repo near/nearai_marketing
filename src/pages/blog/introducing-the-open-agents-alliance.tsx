@@ -10,6 +10,10 @@ const OpenAgentsAlliancePost = () => {
       author={{
         name: 'Jay Zalowitz',
       }}
+      prevPost={{
+        slug: 'aitp-announcement',
+        title: 'Introducing AITP: Agent Interaction & Transaction Protocol',
+      }}
     >
       <p className="text-lg leading-relaxed mb-12 text-[#AFD0C5]">
         At ETHDenver 2025, the NEAR AI team introduced an exciting collaboration of forward-thinking teams including NEAR AI and Coinbase Onramp & AgentKit: the Open Agents Alliance (OAA), an initiative to deliver powerful, open source AI services to all users by combining infrastructure. With secure infrastructure powered by TEEs, an innovative and inclusive payment rail, and cutting-edge AI technology, the OAA teams' shared mission is to ensure secure, open source, economical, and fair AI access for humanity, prioritizing user privacy and economic inclusivity for over 5.5 billion web users worldwide.

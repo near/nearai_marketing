@@ -10,6 +10,14 @@ const PostPage = () => {
       author={{
         name: 'Alex Skidanov',
       }}
+      prevPost={{
+        slug: 'building-next-gen-near-ai-infrastructure-with-tees',
+        title: 'Building Next-Gen NEAR AI Infrastructure with TEEs',
+      }}
+      nextPost={{
+        slug: 'aitp-announcement',
+        title: 'Introducing AITP: Agent Interaction & Transaction Protocol',
+      }}
     >
       <p className="text-lg leading-relaxed mb-12 text-[#AFD0C5]">
         Today Illia and I published a preprint of “Proof of Response,” a paper introducing a novel primitive for

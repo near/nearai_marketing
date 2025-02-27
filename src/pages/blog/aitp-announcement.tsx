@@ -10,6 +10,14 @@ const AITPPost = () => {
       author={{
         name: 'Illia Polosukhin',
       }}
+      prevPost={{
+        slug: 'proof-of-response-announcement',
+        title: 'Announcing Proof of Response',
+      }}
+      nextPost={{
+        slug: 'introducing-the-open-agents-alliance',
+        title: 'Introducing the Open Agents Alliance',
+      }}
     >
       <p className="text-lg leading-relaxed mb-12 text-[#AFD0C5]">
         NEAR AI is releasing today a Request for Comments (<a href="https://en.wikipedia.org/wiki/Request_for_Comments" className="text-[#00EB9A] no-underline hover:underline">RFC</a>) 
