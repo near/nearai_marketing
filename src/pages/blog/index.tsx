@@ -2,9 +2,19 @@ import { format, parseISO } from 'date-fns';
 import Link from 'next/link';
 import React from 'react';
 
+import { MetaTags } from '@/components/MetaTags';
 import PageWrapper from '@/components/pages/NearAI/PageWrapper';
 
 const posts = [
+  {
+    slug: 'introducing-the-open-agents-alliance',
+    title: 'Introducing the Open Agents Alliance',
+    excerpt: 'At ETHDenver 2025, the NEAR AI team introduced an exciting collaboration of forward-thinking teams: the Open Agents Alliance (OAA), an initiative to deliver powerful, open source AI services to all users by combining infrastructure.',
+    date: '2025-02-27',
+    author: {
+      name: 'Jay Zalowitz',
+    },
+  },
   {
     slug: 'aitp-announcement',
     title: 'Introducing AITP: Agent Interaction & Transaction Protocol to enable inter-agent payments & communication',
@@ -57,6 +67,7 @@ const posts = [
 const BlogIndex = () => {
   return (
     <PageWrapper withAnimation={true}>
+      <MetaTags title="NEAR AI - Blog" />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 py-24">
         <header className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">NEAR AI Blog</h1>

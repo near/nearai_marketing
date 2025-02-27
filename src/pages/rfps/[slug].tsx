@@ -3,6 +3,7 @@ import { ArrowRight } from 'lucide-react';
 import type { GetServerSideProps, InferGetServerSidePropsType } from 'next';
 import React from 'react';
 
+import { MetaTags } from '@/components/MetaTags';
 import { BlogWrapper } from '@/components/pages/NearAI/PageWrapper';
 import { rfps } from '@/data/rfps';
 
@@ -21,6 +22,10 @@ export const getServerSideProps = (async (req) => {
 export default function RfpPost({ rfp }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
     <BlogWrapper>
+      <MetaTags 
+        title={`NEAR AI - ${rfp.title}`}
+        description={rfp.excerpt}
+      />
       <div className="mx-auto px-6 md:px-8 space-y-12">
         <header className="text-center mb-16">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8">{rfp.title}</h1>
