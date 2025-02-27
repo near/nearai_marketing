@@ -2,6 +2,7 @@ import { format, parseISO } from 'date-fns';
 import { Facebook, Link as LinkIcon, Linkedin, Twitter } from 'lucide-react';
 import React from 'react';
 
+import { MetaTags } from '@/components/MetaTags';
 import { BlogWrapper } from '@/components/pages/NearAI/PageWrapper';
 
 interface BlogPostProps {
@@ -68,9 +69,22 @@ const SocialShare = ({ url, title }: { url: string; title: string }) => {
 
 const BlogPost = ({ title, date, author, children }: BlogPostProps) => {
   const currentUrl = typeof window !== 'undefined' ? window.location.href : '';
+  // Extract a meta description from the first paragraph if it's a string
+  let description = '';
+  if (React.Children.count(children) > 0) {
+    const firstChild = React.Children.toArray(children)[0];
+    if (React.isValidElement(firstChild) && firstChild.props.children && typeof firstChild.props.children === 'string') {
+      description = firstChild.props.children.slice(0, 160) + '...';
+    }
+  }
 
   return (
     <BlogWrapper>
+      <MetaTags 
+        title={`NEAR AI - ${title}`}
+        description={description || undefined}
+        image={undefined}
+      />
       <div className="mx-auto px-6 md:px-8">
         <header className="text-center mb-16">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8">{title}</h1>

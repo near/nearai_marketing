@@ -2,6 +2,7 @@ import { format, parseISO } from 'date-fns';
 import Link from 'next/link';
 import React from 'react';
 
+import { MetaTags } from '@/components/MetaTags';
 import PageWrapper from '@/components/pages/NearAI/PageWrapper';
 
 const posts = [
@@ -66,6 +67,7 @@ const posts = [
 const BlogIndex = () => {
   return (
     <PageWrapper withAnimation={true}>
+      <MetaTags title="NEAR AI - Blog" />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 py-24">
         <header className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">NEAR AI Blog</h1>

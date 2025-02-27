@@ -1,12 +1,14 @@
 import { format, parseISO } from 'date-fns';
 import Link from 'next/link';
 
+import { MetaTags } from '@/components/MetaTags';
 import PageWrapper from '@/components/pages/NearAI/PageWrapper';
 import { rfps } from '@/data/rfps';
 
 const RFPList = () => {
   return (
     <PageWrapper withAnimation={true}>
+      <MetaTags title="NEAR AI - Requests for Proposals" description="Join us in building the future of intelligent agents through our open requests for proposals" />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 py-24">
         <header className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Requests for Proposals</h1>
