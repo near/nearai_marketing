@@ -6,6 +6,15 @@ import PageWrapper from '@/components/pages/NearAI/PageWrapper';
 
 const posts = [
   {
+    slug: 'introducing-the-open-agents-alliance',
+    title: 'Introducing the Open Agents Alliance',
+    excerpt: 'At ETHDenver 2025, the NEAR AI team introduced an exciting collaboration of forward-thinking teams: the Open Agents Alliance (OAA), an initiative to deliver powerful, open source AI services to all users by combining infrastructure.',
+    date: '2025-02-27',
+    author: {
+      name: 'Jay Zalowitz',
+    },
+  },
+  {
     slug: 'aitp-announcement',
     title: 'Introducing AITP: Agent Interaction & Transaction Protocol to enable inter-agent payments & communication',
     excerpt: 'NEAR AI is releasing today a Request for Comments (RFC) of AITP: Agent Interaction and Transaction Protocol, enabling AI agents to communicate securely across trust boundaries.',
