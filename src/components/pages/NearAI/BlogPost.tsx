@@ -1,5 +1,6 @@
 import { format, parseISO } from 'date-fns';
-import { Facebook, Link as LinkIcon, Linkedin, Twitter } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Facebook, Link as LinkIcon, Linkedin, Twitter } from 'lucide-react';
+import Link from 'next/link';
 import React from 'react';
 
 import { MetaTags } from '@/components/MetaTags';
@@ -14,6 +15,14 @@ interface BlogPostProps {
     title?: string;
   };
   children: React.ReactNode;
+  prevPost?: {
+    slug: string;
+    title: string;
+  };
+  nextPost?: {
+    slug: string;
+    title: string;
+  };
 }
 
 const ShareButton = ({ href, icon: Icon, label }: { href: string; icon: React.ElementType; label: string }) => (
@@ -35,7 +44,7 @@ const SocialShare = ({ url, title }: { url: string; title: string }) => {
   const encodedTitle = encodeURIComponent(title);
 
   return (
-    <div className="flex items-center gap-2 justify-center mt-24 pb-12 border-b border-[#00EB9A]/20">
+    <div className="flex items-center gap-2 justify-center mt-24 mb-12">
       <span className="text-[#AFD0C5] mr-2">Share:</span>
       <ShareButton
         href={`https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}`}
@@ -67,7 +76,47 @@ const SocialShare = ({ url, title }: { url: string; title: string }) => {
   );
 };
 
-const BlogPost = ({ title, date, author, children }: BlogPostProps) => {
+const PostNavigation = ({ prevPost, nextPost }: { prevPost?: BlogPostProps['prevPost']; nextPost?: BlogPostProps['nextPost'] }) => {
+  if (!prevPost && !nextPost) return null;
+
+  return (
+    <div className="mt-12 pt-8 border-t border-[#00EB9A]/20 grid grid-cols-1 md:grid-cols-2 gap-6">
+      {prevPost ? (
+        <Link
+          href={`/blog/${prevPost.slug}`}
+          className="group flex items-center gap-3 p-6 rounded-xl border border-[#00EB9A]/20 bg-black/30 
+                     backdrop-blur-sm hover:bg-black/40 transition-all"
+        >
+          <ArrowLeft className="w-5 h-5 text-[#00EB9A] group-hover:transform group-hover:-translate-x-1 transition-transform" />
+          <div>
+            <div className="text-sm text-[#AFD0C5] mb-1">Previous</div>
+            <div className="font-medium group-hover:text-[#00EB9A] transition-colors">{prevPost.title}</div>
+          </div>
+        </Link>
+      ) : (
+        <div className="hidden md:block" />
+      )}
+
+      {nextPost ? (
+        <Link
+          href={`/blog/${nextPost.slug}`}
+          className="group flex items-center justify-end gap-3 p-6 rounded-xl border border-[#00EB9A]/20 bg-black/30 
+                     backdrop-blur-sm hover:bg-black/40 transition-all"
+        >
+          <div className="text-right">
+            <div className="text-sm text-[#AFD0C5] mb-1">Next</div>
+            <div className="font-medium group-hover:text-[#00EB9A] transition-colors">{nextPost.title}</div>
+          </div>
+          <ArrowRight className="w-5 h-5 text-[#00EB9A] group-hover:transform group-hover:translate-x-1 transition-transform" />
+        </Link>
+      ) : (
+        <div className="hidden md:block" />
+      )}
+    </div>
+  );
+};
+
+const BlogPost = ({ title, date, author, children, prevPost, nextPost }: BlogPostProps) => {
   const currentUrl = typeof window !== 'undefined' ? window.location.href : '';
   // Extract a meta description from the first paragraph if it's a string
   let description = '';
@@ -100,6 +149,8 @@ const BlogPost = ({ title, date, author, children }: BlogPostProps) => {
         <div className="space-y-12">{children}</div>
 
         <SocialShare url={currentUrl} title={title} />
+        
+        <PostNavigation prevPost={prevPost} nextPost={nextPost} />
       </div>
     </BlogWrapper>
   );

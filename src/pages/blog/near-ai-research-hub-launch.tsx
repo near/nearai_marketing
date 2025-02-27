@@ -10,6 +10,14 @@ const ResearchHubPost = () => {
       author={{
         name: 'Illia Polosukhin',
       }}
+      prevPost={{
+        slug: 'near-ai-assistant-alpha',
+        title: 'NEAR AI Assistant is in Alpha: User-Owned AI in Action',
+      }}
+      nextPost={{
+        slug: 'building-next-gen-near-ai-infrastructure-with-tees',
+        title: 'Building Next-Gen NEAR AI Infrastructure with TEEs',
+      }}
     >
       <div className="bg-black/30 border border-[#00EB9A]/20 rounded-xl p-6 mb-16">
         <h2 className="text-white font-bold mb-4 text-xl">TLDR:</h2>

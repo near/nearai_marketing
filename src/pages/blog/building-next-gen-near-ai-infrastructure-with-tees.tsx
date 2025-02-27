@@ -10,6 +10,14 @@ const TEEBlogPost = () => {
       author={{
         name: 'Illia Polosukhin',
       }}
+      prevPost={{
+        slug: 'near-ai-research-hub-launch',
+        title: 'NEAR AI Launches Research Hub to Build the Next Frontier AI Model',
+      }}
+      nextPost={{
+        slug: 'proof-of-response-announcement',
+        title: 'Announcing Proof of Response',
+      }}
     >
       <p className="text-xl text-[#AFD0C5] italic text-center mb-12">
         Enabling Fully Private, Verifiable AI Agents with Phala Network

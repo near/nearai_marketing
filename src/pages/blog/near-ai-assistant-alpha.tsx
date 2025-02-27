@@ -10,6 +10,10 @@ const AssistantPost = () => {
       author={{
         name: 'Illia Polosukhin',
       }}
+      nextPost={{
+        slug: 'near-ai-research-hub-launch',
+        title: 'NEAR AI Launches Research Hub to Build the Next Frontier AI Model',
+      }}
     >
       <p className="text-lg leading-relaxed mb-12 text-[#AFD0C5]">
         In the last couple of years, AI assistants have become a part of many people&apos;s daily lives for performing
