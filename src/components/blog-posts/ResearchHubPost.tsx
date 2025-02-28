@@ -1,24 +1,8 @@
 import React from 'react';
 
-import BlogPost from '@/components/pages/NearAI/BlogPost';
-
-const ResearchHubPost = () => {
+const ResearchHubPost: React.FC = () => {
   return (
-    <BlogPost
-      title="NEAR AI Launches Research Hub to Build the Next Frontier AI Model"
-      date="2024-11-10"
-      author={{
-        name: 'Illia Polosukhin',
-      }}
-      prevPost={{
-        slug: 'near-ai-assistant-alpha',
-        title: 'NEAR AI Assistant is in Alpha: User-Owned AI in Action',
-      }}
-      nextPost={{
-        slug: 'building-next-gen-near-ai-infrastructure-with-tees',
-        title: 'Building Next-Gen NEAR AI Infrastructure with TEEs',
-      }}
-    >
+    <>
       <div className="bg-black/30 border border-[#00EB9A]/20 rounded-xl p-6 mb-16">
         <h2 className="text-white font-bold mb-4 text-xl">TLDR:</h2>
         <ul className="text-[#AFD0C5] list-disc pl-4 space-y-3">
@@ -45,7 +29,7 @@ const ResearchHubPost = () => {
         open. We want to ensure that the best AI models are always available to everyone, permissionlessly. Everyone
         should have access to frontier AI models with absolute certainty that their data cannot be seen by anyone. Today
         we&apos;re launching the NEAR AI Research Hub, a community-built, decentralized frontier AI lab that can build
-        bigger and better models than even the biggest, best-funded centralized companies can.
+        bigger and better models than even the biggest, best-funded centralized
       </p>
 
       <p className="text-lg leading-relaxed mb-12 text-[#AFD0C5]">
@@ -157,7 +141,7 @@ const ResearchHubPost = () => {
         </a>{' '}
         in the competition.
       </p>
-    </BlogPost>
+    </>
   );
 };
 

@@ -1,24 +1,8 @@
 import React from 'react';
 
-import BlogPost from '@/components/pages/NearAI/BlogPost';
-
-const AITPPost = () => {
+const AITPAnnouncementPost: React.FC = () => {
   return (
-    <BlogPost
-      title="Introducing AITP: Agent Interaction & Transaction Protocol to enable inter-agent payments & communication"
-      date="2025-02-25"
-      author={{
-        name: 'Illia Polosukhin',
-      }}
-      prevPost={{
-        slug: 'proof-of-response-announcement',
-        title: 'Announcing Proof of Response',
-      }}
-      nextPost={{
-        slug: 'introducing-the-open-agents-alliance',
-        title: 'Introducing the Open Agents Alliance',
-      }}
-    >
+    <>
       <p className="text-lg leading-relaxed mb-12 text-[#AFD0C5]">
         NEAR AI is releasing today a Request for Comments (<a href="https://en.wikipedia.org/wiki/Request_for_Comments" className="text-[#00EB9A] no-underline hover:underline">RFC</a>) 
         of <a href="http://aitp.dev" className="text-[#00EB9A] no-underline hover:underline">AITP</a>: Agent Interaction and Transaction Protocol. 
@@ -65,8 +49,8 @@ const AITPPost = () => {
         The team welcomes feedback and contributions to AITP, which is in the process of integration to NEAR AI Hub (app.near.ai) and various agents built by 
         NEAR AI and our collaborators.
       </p>
-    </BlogPost>
+    </>
   );
 };
 
-export default AITPPost;
+export default AITPAnnouncementPost;
