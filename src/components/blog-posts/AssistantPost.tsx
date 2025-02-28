@@ -1,20 +1,8 @@
 import React from 'react';
 
-import BlogPost from '@/components/pages/NearAI/BlogPost';
-
-const AssistantPost = () => {
+const AssistantPost: React.FC = () => {
   return (
-    <BlogPost
-      title="NEAR AI Assistant is in Alpha: User-Owned AI in Action"
-      date="2024-11-10"
-      author={{
-        name: 'Illia Polosukhin',
-      }}
-      nextPost={{
-        slug: 'near-ai-research-hub-launch',
-        title: 'NEAR AI Launches Research Hub to Build the Next Frontier AI Model',
-      }}
-    >
+    <>
       <p className="text-lg leading-relaxed mb-12 text-[#AFD0C5]">
         In the last couple of years, AI assistants have become a part of many people&apos;s daily lives for performing
         and streamlining all sorts of everyday tasks. But they have a major shortcoming: they can gather information and
@@ -96,7 +84,7 @@ const AssistantPost = () => {
         </a>
         .
       </p>
-    </BlogPost>
+    </>
   );
 };
 

@@ -10,9 +10,7 @@ interface AlphaLabelProps {
 }
 
 const AlphaLabel = ({ version }: AlphaLabelProps) => (
-  <span className="text-[#00EB9A] group-hover:text-white">
-    alpha{version ? ` ${version}` : ''}
-  </span>
+  <span className="text-[#00EB9A] group-hover:text-white">alpha{version ? ` ${version}` : ''}</span>
 );
 
 interface NavLinkProps {

@@ -1,6 +1,7 @@
 import { format, parseISO } from 'date-fns';
-import { ArrowRight } from 'lucide-react';
+import { ArrowLeft, ArrowRight } from 'lucide-react';
 import type { GetServerSideProps, InferGetServerSidePropsType } from 'next';
+import Link from 'next/link';
 import React from 'react';
 
 import { MetaTags } from '@/components/MetaTags';
@@ -22,11 +23,18 @@ export const getServerSideProps = (async (req) => {
 export default function RfpPost({ rfp }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
     <BlogWrapper>
-      <MetaTags 
-        title={`NEAR AI - ${rfp.title}`}
-        description={rfp.excerpt}
-      />
+      <MetaTags title={`NEAR AI - ${rfp.title}`} description={rfp.excerpt} />
       <div className="mx-auto px-6 md:px-8 space-y-12">
+        <div className="mb-8">
+          <Link
+            href="/rfps"
+            className="inline-flex items-center text-[#00EB9A] hover:text-white transition-colors gap-2 py-2 px-4 bg-[#00EB9A]/10 hover:bg-[#00EB9A]/20 rounded-lg"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            <span>Back to RFPs</span>
+          </Link>
+        </div>
+
         <header className="text-center mb-16">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8">{rfp.title}</h1>
 
@@ -49,12 +57,13 @@ export default function RfpPost({ rfp }: InferGetServerSidePropsType<typeof getS
           href={rfp.submitProposalUrl}
           target="_blank"
           className={`
-      inline-flex items-center px-8 py-3 rounded-lg font-medium transition-all
-      bg-[#00EB9A] text-black hover:bg-[#00EB9A]/90 shadow-[#00EB9A]/30 shadow-lg hover:shadow-xl
-    `}
+            inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg
+            bg-[#00EB9A] text-black font-medium
+            hover:bg-[#00EB9A]/80 transition-colors
+            mx-auto block w-fit
+          `}
         >
-          Submit Proposal
-          <ArrowRight className="ml-2 h-4 w-4" />
+          Submit Proposal <ArrowRight className="w-4 h-4" />
         </a>
       </div>
     </BlogWrapper>

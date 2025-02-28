@@ -1,24 +1,8 @@
 import React from 'react';
 
-import BlogPost from '@/components/pages/NearAI/BlogPost';
-
-const TEEBlogPost = () => {
+const TEEInfrastructurePost: React.FC = () => {
   return (
-    <BlogPost
-      title="Building Next-Gen NEAR AI Infrastructure with TEEs"
-      date="2025-01-20"
-      author={{
-        name: 'Illia Polosukhin',
-      }}
-      prevPost={{
-        slug: 'near-ai-research-hub-launch',
-        title: 'NEAR AI Launches Research Hub to Build the Next Frontier AI Model',
-      }}
-      nextPost={{
-        slug: 'proof-of-response-announcement',
-        title: 'Announcing Proof of Response',
-      }}
-    >
+    <>
       <p className="text-xl text-[#AFD0C5] italic text-center mb-12">
         Enabling Fully Private, Verifiable AI Agents with Phala Network
       </p>
@@ -170,8 +154,8 @@ const TEEBlogPost = () => {
         </a>{' '}
         to test the new SDK!
       </p>
-    </BlogPost>
+    </>
   );
 };
 
-export default TEEBlogPost;
+export default TEEInfrastructurePost;

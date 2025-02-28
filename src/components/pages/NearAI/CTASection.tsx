@@ -1,9 +1,9 @@
 import { ArrowRight } from 'lucide-react';
 import React from 'react';
 
-import { useInteractionTracking } from '@/hooks/useInteractionTracking';
 import XIcon from '@/components/pages/NearAI/XIcon';
 import YouTubeIcon from '@/components/pages/NearAI/YouTubeIcon';
+import { useInteractionTracking } from '@/hooks/useInteractionTracking';
 
 interface CTAButtonProps {
   href: string;
@@ -17,7 +17,7 @@ const CTAButton = ({ href, children, primary = false, external = false, tracking
   const { trackRef } = useInteractionTracking();
   const isNearAiDomain = href.includes('near.ai');
   const shouldOpenNewTab = external && !isNearAiDomain;
-  
+
   return (
     <a
       ref={(el) => trackRef(el, trackingId || `cta_button_${children}`)}
@@ -54,19 +54,10 @@ const CTASection = () => {
           <div className="flex flex-col items-center gap-8">
             {/* Main CTAs */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <CTAButton 
-                href="https://app.near.ai" 
-                primary 
-                external 
-                trackingId="cta_developer_hub"
-              >
+              <CTAButton href="https://app.near.ai" primary external trackingId="cta_developer_hub">
                 Try Developer Hub
               </CTAButton>
-              <CTAButton 
-                href="https://chat.near.ai" 
-                external
-                trackingId="cta_ai_assistant"
-              >
+              <CTAButton href="https://chat.near.ai" external trackingId="cta_ai_assistant">
                 Chat with Assistant
               </CTAButton>
               <CTAButton

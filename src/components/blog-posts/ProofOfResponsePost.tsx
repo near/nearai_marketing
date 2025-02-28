@@ -1,26 +1,10 @@
 import React from 'react';
 
-import BlogPost from '@/components/pages/NearAI/BlogPost';
-
-const PostPage = () => {
+const ProofOfResponsePost: React.FC = () => {
   return (
-    <BlogPost
-      title="Announcing Proof of Response: a novel primitive in decentralized systems to guarantee liveness and responsiveness of services"
-      date="2025-02-18"
-      author={{
-        name: 'Alex Skidanov',
-      }}
-      prevPost={{
-        slug: 'building-next-gen-near-ai-infrastructure-with-tees',
-        title: 'Building Next-Gen NEAR AI Infrastructure with TEEs',
-      }}
-      nextPost={{
-        slug: 'aitp-announcement',
-        title: 'Introducing AITP: Agent Interaction & Transaction Protocol',
-      }}
-    >
+    <>
       <p className="text-lg leading-relaxed mb-12 text-[#AFD0C5]">
-        Today Illia and I published a preprint of “Proof of Response,” a paper introducing a novel primitive for
+        Today Illia and I published a preprint of "Proof of Response," a paper introducing a novel primitive for
         decentralized systems. Proof of Response is a novel mechanism for guaranteeing liveness and responsiveness of
         services, with a wide range of potential use cases. You can download and read the full paper{' '}
         <a
@@ -52,7 +36,7 @@ const PostPage = () => {
         reservations.
       </p>
       <p className="text-lg leading-relaxed mb-12 text-[#AFD0C5]">
-        In the morning, my personal agent will work with a shopping agent to buy coffee when I’m running low. Then it
+        In the morning, my personal agent will work with a shopping agent to buy coffee when I'm running low. Then it
         will pull the weather from the weather agent to show, and potentially take some action, such as to change AC
         settings. It will take action, that is, if the weather agent is online and live. If the weather agent is down,
         my personal assistant agent needs to get creative: find another weather agent, or act without having all the
@@ -67,19 +51,19 @@ const PostPage = () => {
       <p className="text-lg leading-relaxed mb-12 text-[#AFD0C5]">
         The problem here is that if my personal assistant agent claims that the weather agent is offline, while the
         weather agent claims that it is online, there is no way for the system to verify which of the two of us is in
-        the wrong. This problem is known as the “two generals problem” in computer networking.
+        the wrong. This problem is known as the "two generals problem" in computer networking.
       </p>
       <p className="text-lg leading-relaxed mb-12 text-[#AFD0C5]">
         In the simple case where the agent is either online for everyone, or offline for everyone, a system can be
         designed where once my personal assistant makes a claim that the weather agent is offline, a small number of
-        validators ping the weather agent, and confirms whether it’s online or offline. Instead, we want a mechanism
-        that can handle more sophisticated cases, in which the agent might not be offline for everybody, but it doesn’t
+        validators ping the weather agent, and confirms whether it's online or offline. Instead, we want a mechanism
+        that can handle more sophisticated cases, in which the agent might not be offline for everybody, but it doesn't
         want to serve a very particular request necessary for me.
       </p>
       <p className="text-lg leading-relaxed mb-12 text-[#AFD0C5]">
         The core idea behind Proof of Response is a network of interconnected relayers that connect a set of service
-        providers (agents or services) and users (agents, services, or old fashioned humans). When a user, let’s call
-        her Alice, wants to fetch some data from a service provider, let’s call her Sarah, Alice chooses a path via the
+        providers (agents or services) and users (agents, services, or old fashioned humans). When a user, let's call
+        her Alice, wants to fetch some data from a service provider, let's call her Sarah, Alice chooses a path via the
         relayers such that she is connected to the first relayer on the path, and Sarah is connected to the last. Say
         the path is Alice - Bob - Charlie - David - Sarah. Alice then sends the request to Bob, saying that she wants
         data from Sarah, and specifying the path via which to relay the message.
@@ -96,9 +80,9 @@ const PostPage = () => {
       </ol>
       <p className="text-lg leading-relaxed mb-12 text-[#AFD0C5]">
         Moreover, Bob must either do one of those two things within the cumulative declared latency of the edges on the
-        path, or let’s say for each 200ms (a number that Alice and Bob need to agree upon in advance) of delay, they
+        path, or let's say for each 200ms (a number that Alice and Bob need to agree upon in advance) of delay, they
         would need to send Alice a small payment via their payment channel. Note that Bob must be sending those small
-        payments for as long as he hasn’t sent to Alice either the response from Sarah, or a proof of a broken edge. In
+        payments for as long as he hasn't sent to Alice either the response from Sarah, or a proof of a broken edge. In
         particular, if Sarah chooses not to respond to the message, Bob will eventually have to send Alice a proof of a
         broken edge.
       </p>
@@ -106,7 +90,7 @@ const PostPage = () => {
         If we now consider the protocol between Bob and Charlie, we will notice that for as long as Charlie sticks to
         the protocol, Bob will also be able to. Once Charlie sends Bob the response or the proof of a broken edge, Bob
         can forward it to Alice, and for every 200ms of delay, Bob forwards Alice the payment from Charlie. If Charlie
-        deviates from the protocol, meaning that he doesn’t send Bob the payment for the delay, Bob can choose to either
+        deviates from the protocol, meaning that he doesn't send Bob the payment for the delay, Bob can choose to either
         break the edge, and thus still conform to the protocol, or wait for Charlie and pay the delay fee out of pocket.
       </p>
       <p className="text-lg leading-relaxed mb-12 text-[#AFD0C5]">
@@ -121,7 +105,7 @@ const PostPage = () => {
         issuing the same request over different paths, until Sarah is separated from the network.
       </p>
       <p className="text-lg leading-relaxed mb-12 text-[#AFD0C5]">
-        Proof of Response doesn’t itself impose any requirements on the message that Sarah sends to Alice besides the
+        Proof of Response doesn't itself impose any requirements on the message that Sarah sends to Alice besides the
         fact that it needs to be signed by Sarah. It is up to the protocols that build on top of Proof of Response to
         introduce validation of such messages, and procedures to enforce their correctness. This also means that Proof
         of Response can be used by many types of protocols and many different use cases, from AI to crypto and beyond.
@@ -135,7 +119,7 @@ const PostPage = () => {
         provider can request it via Proof of Response. As was shown above, they will either receive the response from
         the provider, or separate them from the network. The data storage protocol can build extra slashing mechanisms
         into their contracts that would slash the data provider if they get disconnected from the network, or if the
-        user can provide any message signed by the data provider that doesn’t adhere to the data storage protocol.
+        user can provide any message signed by the data provider that doesn't adhere to the data storage protocol.
       </p>
       <p className="text-lg leading-relaxed mb-12 text-[#AFD0C5]">
         Once we started working on Proof of Response, we noticed that there are many places where it can be helpful. For
@@ -157,7 +141,7 @@ const PostPage = () => {
       </p>
       <p className="text-lg leading-relaxed mb-12 text-[#AFD0C5]">
         For those interested in downloading and reading the full Proof of Response paper or offering comments and
-        feedback, here’s{' '}
+        feedback, here's{' '}
         <a
           download
           href="https://raw.githubusercontent.com/nearai/por/refs/heads/main/ProofOfResponse.pdf"
@@ -167,8 +151,8 @@ const PostPage = () => {
         </a>{' '}
         again.
       </p>
-    </BlogPost>
+    </>
   );
 };
 
-export default PostPage;
+export default ProofOfResponsePost;

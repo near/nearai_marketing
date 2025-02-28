@@ -4,65 +4,7 @@ import React from 'react';
 
 import { MetaTags } from '@/components/MetaTags';
 import PageWrapper from '@/components/pages/NearAI/PageWrapper';
-
-const posts = [
-  {
-    slug: 'introducing-the-open-agents-alliance',
-    title: 'Introducing the Open Agents Alliance',
-    excerpt: 'At ETHDenver 2025, the NEAR AI team introduced an exciting collaboration of forward-thinking teams: the Open Agents Alliance (OAA), an initiative to deliver powerful, open source AI services to all users by combining infrastructure.',
-    date: '2025-02-27',
-    author: {
-      name: 'Jay Zalowitz',
-    },
-  },
-  {
-    slug: 'aitp-announcement',
-    title: 'Introducing AITP: Agent Interaction & Transaction Protocol to enable inter-agent payments & communication',
-    excerpt: 'NEAR AI is releasing today a Request for Comments (RFC) of AITP: Agent Interaction and Transaction Protocol, enabling AI agents to communicate securely across trust boundaries.',
-    date: '2025-02-25',
-    author: {
-      name: 'Illia Polosukhin',
-    },
-  },
-  {
-    slug: 'proof-of-response-announcement',
-    title: 'Announcing Proof of Response',
-    excerpt: 'A novel primitive in decentralized systems to guarantee liveness and responsiveness of services',
-    date: '2025-02-18',
-    author: {
-      name: 'Alex Skidanov',
-    },
-  },
-  {
-    slug: 'building-next-gen-near-ai-infrastructure-with-tees',
-    title: 'Building Next-Gen NEAR AI Infrastructure with TEEs',
-    excerpt: 'Enabling Fully Private, Verifiable AI Agents with Phala Network',
-    date: '2025-01-20',
-    author: {
-      name: 'Illia Polosukhin',
-    },
-  },
-  {
-    slug: 'near-ai-research-hub-launch',
-    title: 'NEAR AI Launches Research Hub to Build the Next Frontier AI Model',
-    excerpt:
-      'NEAR.AI is in the process of building the next generation frontier AI model with 1.4T parameters. The first competition is now live.',
-    date: '2024-11-10',
-    author: {
-      name: 'Illia Polosukhin',
-    },
-  },
-  {
-    slug: 'near-ai-assistant-alpha',
-    title: 'NEAR AI Assistant is in Alpha: User-Owned AI in Action',
-    excerpt:
-      'Today, NEAR AI is opening up access to NEAR AI Assistant (Alpha). This is the first step in our journey to put a User-Owned AI in the hands of everyone in the world.',
-    date: '2024-11-10',
-    author: {
-      name: 'Illia Polosukhin',
-    },
-  },
-];
+import { blogPosts } from '@/data/blog-posts';
 
 const BlogIndex = () => {
   return (
@@ -75,7 +17,7 @@ const BlogIndex = () => {
         </header>
 
         <div className="grid gap-8">
-          {posts.map((post) => (
+          {blogPosts.map((post) => (
             <Link
               key={post.slug}
               href={`/blog/${post.slug}`}
