@@ -2,6 +2,7 @@ import { ArrowRight, ChevronRight } from 'lucide-react';
 import Link from 'next/link';
 import type { ReactNode } from 'react';
 import React from 'react';
+
 import { useInteractionTracking } from '@/hooks/useInteractionTracking';
 
 interface ProductCardProps {
@@ -27,11 +28,7 @@ const ProductCard = ({ title, description, features, cta, alpha, className = '',
       <div className="relative bg-black/30 p-8 rounded-xl border border-[#00EB9A]/20 backdrop-blur-sm h-full flex flex-col">
         <div className="flex items-start justify-between mb-4">
           <h3 className="text-2xl font-bold text-white">{title}</h3>
-          {alpha && (
-            <span className="px-3 py-1 text-sm bg-[#00EB9A]/10 text-[#00EB9A] rounded-full">
-              {alpha}
-            </span>
-          )}
+          {alpha && <span className="px-3 py-1 text-sm bg-[#00EB9A]/10 text-[#00EB9A] rounded-full">{alpha}</span>}
         </div>
         <p className="text-[#AFD0C5] mb-6">{description}</p>
         <ul className="space-y-3 mb-8 flex-grow">
@@ -136,15 +133,22 @@ const ProductSection = () => {
               description="Let us know how we can support your project"
               features={[
                 <span key="rfps">
-                  View current <Link href="/rfps" className="text-[#00EB9A] hover:text-[#00EB9A]/80 transition-colors">
+                  View current{' '}
+                  <Link href="/rfps" className="text-[#00EB9A] hover:text-[#00EB9A]/80 transition-colors">
                     Requests for Proposals (RFPs)
                   </Link>
                 </span>,
                 <span key="hackathon">
-                  Get involved with an <a href="http://onetrillionagents.com/" target="_blank" rel="noopener noreferrer" className="text-[#00EB9A] hover:text-[#00EB9A]/80 transition-colors">
+                  Get involved with an{' '}
+                  <a
+                    href="http://onetrillionagents.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[#00EB9A] hover:text-[#00EB9A]/80 transition-colors"
+                  >
                     AI Hackathon
                   </a>
-                </span>
+                </span>,
               ]}
               cta={{ text: 'Get In Touch', href: 'https://airtable.com/appc0ZVhbKj8hMLvH/pag4dQKP3KF3qrTFo/form' }}
               trackingId="product_contact_us"

@@ -1,4 +1,5 @@
 import { useCallback } from 'react';
+
 import type Analytics from '../types/rudderstack-analytics';
 
 // Extend Window interface to include rudderAnalytics

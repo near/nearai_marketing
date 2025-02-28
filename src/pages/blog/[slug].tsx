@@ -1,9 +1,9 @@
-import { GetStaticPaths, GetStaticProps } from 'next';
-import { ParsedUrlQuery } from 'querystring';
+import type { GetStaticPaths, GetStaticProps } from 'next';
+import type { ParsedUrlQuery } from 'querystring';
 import React from 'react';
 
 import BlogPost from '@/components/pages/NearAI/BlogPost';
-import { blogPosts, getBlogPostBySlug, getPrevNextPosts, contentComponents } from '@/data/blog-posts';
+import { blogPosts, contentComponents, getBlogPostBySlug, getPrevNextPosts } from '@/data/blog-posts';
 
 interface BlogPostPageProps {
   slug: string;
@@ -15,11 +15,11 @@ interface Params extends ParsedUrlQuery {
 
 const BlogPostPage: React.FC<BlogPostPageProps> = ({ slug }) => {
   const post = getBlogPostBySlug(slug);
-  
+
   if (!post) {
     return <div>Post not found</div>;
   }
-  
+
   const { prev, next } = getPrevNextPosts(slug);
   const ContentComponent = contentComponents[slug];
 
@@ -51,15 +51,13 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
-export const getStaticProps: GetStaticProps<BlogPostPageProps, Params> = async ({
-  params,
-}) => {
+export const getStaticProps: GetStaticProps<BlogPostPageProps, Params> = async ({ params }) => {
   if (!params?.slug) {
     return { notFound: true };
   }
 
   const post = getBlogPostBySlug(params.slug);
-  
+
   if (!post) {
     return { notFound: true };
   }

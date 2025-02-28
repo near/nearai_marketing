@@ -23,18 +23,18 @@ export const getServerSideProps = (async (req) => {
 export default function RfpPost({ rfp }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
     <BlogWrapper>
-      <MetaTags 
-        title={`NEAR AI - ${rfp.title}`}
-        description={rfp.excerpt}
-      />
+      <MetaTags title={`NEAR AI - ${rfp.title}`} description={rfp.excerpt} />
       <div className="mx-auto px-6 md:px-8 space-y-12">
         <div className="mb-8">
-          <Link href="/rfps" className="inline-flex items-center text-[#00EB9A] hover:text-white transition-colors gap-2 py-2 px-4 bg-[#00EB9A]/10 hover:bg-[#00EB9A]/20 rounded-lg">
+          <Link
+            href="/rfps"
+            className="inline-flex items-center text-[#00EB9A] hover:text-white transition-colors gap-2 py-2 px-4 bg-[#00EB9A]/10 hover:bg-[#00EB9A]/20 rounded-lg"
+          >
             <ArrowLeft className="w-4 h-4" />
             <span>Back to RFPs</span>
           </Link>
         </div>
-        
+
         <header className="text-center mb-16">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8">{rfp.title}</h1>
 

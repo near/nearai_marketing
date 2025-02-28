@@ -1,12 +1,12 @@
-import React from 'react';
+import type React from 'react';
 
-// Import all blog post content components 
+// Import all blog post content components
 import AITPAnnouncementPost from '@/components/blog-posts/AITPAnnouncementPost';
+import AssistantPost from '@/components/blog-posts/AssistantPost';
 import OpenAgentsAlliancePost from '@/components/blog-posts/OpenAgentsAlliancePost';
 import ProofOfResponsePost from '@/components/blog-posts/ProofOfResponsePost';
-import TEEInfrastructurePost from '@/components/blog-posts/TEEInfrastructurePost';
 import ResearchHubPost from '@/components/blog-posts/ResearchHubPost';
-import AssistantPost from '@/components/blog-posts/AssistantPost';
+import TEEInfrastructurePost from '@/components/blog-posts/TEEInfrastructurePost';
 
 // Map of slug to content component
 export const contentComponents: Record<string, React.ComponentType<any>> = {
@@ -34,7 +34,8 @@ export const blogPosts: BlogPostMeta[] = [
   {
     slug: 'introducing-the-open-agents-alliance',
     title: 'Introducing the Open Agents Alliance',
-    excerpt: 'At ETHDenver 2025, the NEAR AI team introduced an exciting collaboration of forward-thinking teams: the Open Agents Alliance (OAA), an initiative to deliver powerful, open source AI services to all users by combining infrastructure.',
+    excerpt:
+      'At ETHDenver 2025, the NEAR AI team introduced an exciting collaboration of forward-thinking teams: the Open Agents Alliance (OAA), an initiative to deliver powerful, open source AI services to all users by combining infrastructure.',
     date: '2025-02-27',
     author: {
       name: 'Jay Zalowitz',
@@ -43,7 +44,8 @@ export const blogPosts: BlogPostMeta[] = [
   {
     slug: 'aitp-announcement',
     title: 'Introducing AITP: Agent Interaction & Transaction Protocol to enable inter-agent payments & communication',
-    excerpt: 'NEAR AI is releasing today a Request for Comments (RFC) of AITP: Agent Interaction and Transaction Protocol, enabling AI agents to communicate securely across trust boundaries.',
+    excerpt:
+      'NEAR AI is releasing today a Request for Comments (RFC) of AITP: Agent Interaction and Transaction Protocol, enabling AI agents to communicate securely across trust boundaries.',
     date: '2025-02-25',
     author: {
       name: 'Illia Polosukhin',
@@ -93,18 +95,18 @@ export const blogPosts: BlogPostMeta[] = [
  * Get the previous and next blog posts for navigation
  */
 export function getPrevNextPosts(currentSlug: string): { prev: BlogPostMeta | null; next: BlogPostMeta | null } {
-  const currentIndex = blogPosts.findIndex(post => post.slug === currentSlug);
-  
+  const currentIndex = blogPosts.findIndex((post) => post.slug === currentSlug);
+
   if (currentIndex === -1) {
     return { prev: null, next: null };
   }
 
   // Previous post is the one before (chronologically earlier) the current post
   const prev = currentIndex < blogPosts.length - 1 ? blogPosts[currentIndex + 1] : null;
-  
+
   // Next post is the one after (chronologically later) the current post
-  const next = currentIndex > 0 ? blogPosts[currentIndex - 1] : null;  
-  
+  const next = currentIndex > 0 ? blogPosts[currentIndex - 1] : null;
+
   return { prev, next };
 }
 
@@ -112,5 +114,5 @@ export function getPrevNextPosts(currentSlug: string): { prev: BlogPostMeta | nu
  * Get a blog post by slug
  */
 export function getBlogPostBySlug(slug: string): BlogPostMeta | undefined {
-  return blogPosts.find(post => post.slug === slug);
+  return blogPosts.find((post) => post.slug === slug);
 }
