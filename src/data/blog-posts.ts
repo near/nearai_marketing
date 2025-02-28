@@ -12,8 +12,8 @@ import AssistantPost from '@/components/blog-posts/AssistantPost';
 export const contentComponents: Record<string, React.ComponentType<any>> = {
   'building-next-gen-near-ai-infrastructure-with-tees': TEEInfrastructurePost,
   'aitp-announcement': AITPAnnouncementPost,
-  'proof-of-response': ProofOfResponsePost,
-  'open-agents-alliance': OpenAgentsAlliancePost,
+  'proof-of-response-announcement': ProofOfResponsePost,
+  'introducing-the-open-agents-alliance': OpenAgentsAlliancePost,
   'near-ai-research-hub-launch': ResearchHubPost,
   'near-ai-assistant-alpha': AssistantPost,
 };
@@ -32,7 +32,7 @@ export interface BlogPostMeta {
 // All blog posts in chronological order (newest first)
 export const blogPosts: BlogPostMeta[] = [
   {
-    slug: 'open-agents-alliance',
+    slug: 'introducing-the-open-agents-alliance',
     title: 'Introducing the Open Agents Alliance',
     excerpt: 'At ETHDenver 2025, the NEAR AI team introduced an exciting collaboration of forward-thinking teams: the Open Agents Alliance (OAA), an initiative to deliver powerful, open source AI services to all users by combining infrastructure.',
     date: '2025-02-27',
@@ -50,7 +50,7 @@ export const blogPosts: BlogPostMeta[] = [
     },
   },
   {
-    slug: 'proof-of-response',
+    slug: 'proof-of-response-announcement',
     title: 'Announcing Proof of Response',
     excerpt: 'A novel primitive in decentralized systems to guarantee liveness and responsiveness of services',
     date: '2025-02-18',
@@ -76,7 +76,6 @@ export const blogPosts: BlogPostMeta[] = [
       name: 'Illia Polosukhin',
     },
     description: 'NEAR.AI is building the next generation frontier AI model with 1.4T parameters.',
-    featured: true,
   },
   {
     slug: 'near-ai-assistant-alpha',
