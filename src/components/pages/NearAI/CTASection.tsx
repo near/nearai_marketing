@@ -80,7 +80,7 @@ const CTASection = () => {
                 <XIcon className="w-6 h-6" />
               </a>
               <a
-                href="https://www.youtube.com/@NEAR_AI"
+                href="https://youtube.com/playlist?list=PL9tzQn_TEuFWMuPiQOXhaE5lpOTnxLPZY"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#AFD0C5] hover:text-[#00EB9A] transition-colors"
