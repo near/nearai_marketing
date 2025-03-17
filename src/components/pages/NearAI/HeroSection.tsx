@@ -49,7 +49,6 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-gradient-radial from-[#00EB9A]/5 to-transparent opacity-50" />
 
       <div className="max-w-4xl mx-auto text-center relative">
-        <DragonLogo />
 
         <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 tracking-tight">
         Building user-owned AI.
