@@ -3,6 +3,7 @@ import type React from 'react';
 // Import all blog post content components
 import AITPAnnouncementPost from '@/components/blog-posts/AITPAnnouncementPost';
 import AssistantPost from '@/components/blog-posts/AssistantPost';
+import DCMLPaperPost from '@/components/blog-posts/DCMLPaperPost';
 import OpenAgentsAlliancePost from '@/components/blog-posts/OpenAgentsAlliancePost';
 import ProofOfResponsePost from '@/components/blog-posts/ProofOfResponsePost';
 import ResearchHubPost from '@/components/blog-posts/ResearchHubPost';
@@ -16,6 +17,7 @@ export const contentComponents: Record<string, React.ComponentType<any>> = {
   'introducing-the-open-agents-alliance': OpenAgentsAlliancePost,
   'near-ai-research-hub-launch': ResearchHubPost,
   'near-ai-assistant-alpha': AssistantPost,
+  'decentralized-confidential-machine-learning': DCMLPaperPost,
 };
 
 export interface BlogPostMeta {
@@ -31,6 +33,16 @@ export interface BlogPostMeta {
 
 // All blog posts in chronological order (newest first)
 export const blogPosts: BlogPostMeta[] = [
+  {
+    slug: 'decentralized-confidential-machine-learning',
+    title: 'Decentralized Confidential Machine Learning: A Business Model for User-Owned AI',
+    excerpt:
+      'We present a novel approach to training, fine-tuning, and utilizing models and agents that allows for the decentralized, transparent properties of open source while creating a business model for developers and researchers.',
+    date: '2025-03-19',
+    author: {
+      name: 'Illia Polosukhin',
+    },
+  },
   {
     slug: 'introducing-the-open-agents-alliance',
     title: 'Introducing the Open Agents Alliance',

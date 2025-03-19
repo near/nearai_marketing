@@ -36,8 +36,6 @@ const CTAButton = ({ href, children, primary = false, className = '', external =
   );
 };
 
-
-
 const GlowingText = ({ children, className = '' }: { children: React.ReactNode; className?: string }) => (
   <span className={`text-[#00EB9A] ${className}`}>{children}</span>
 );
@@ -49,13 +47,10 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-gradient-radial from-[#00EB9A]/5 to-transparent opacity-50" />
 
       <div className="max-w-4xl mx-auto text-center relative">
-
-        <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 tracking-tight">
-        Building user-owned AI.
-        </h1>
+        <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 tracking-tight">Building user-owned AI.</h1>
 
         <p className="text-xl md:text-2xl text-[#AFD0C5] mb-4">
-        We develop open-source infrastructure, tools, & products for the agentic future.
+          We develop open-source infrastructure, tools, & products for the agentic future.
         </p>
 
         <p className="text-sm text-[#AFD0C5]/60 mb-12">Join our ecosystem. Let's make AI truly open.</p>
