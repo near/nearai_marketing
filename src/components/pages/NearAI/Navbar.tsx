@@ -78,8 +78,8 @@ const Navbar = () => {
               <NavLink href="https://app.near.ai" external alpha>
                 Developer Hub
               </NavLink>
-              <NavLink href="https://chat.near.ai" external alphaV2>
-                AI Assistant
+              <NavLink href="/careers">
+                Careers
               </NavLink>
               <NavLink href="/rfps">Proposals</NavLink>
               <NavLink href="/blog">
@@ -120,8 +120,8 @@ const Navbar = () => {
           <NavLink href="https://app.near.ai" external alpha onClick={closeMobileMenu}>
             Developer Hub
           </NavLink>
-          <NavLink href="https://chat.near.ai" external alphaV2 onClick={closeMobileMenu}>
-            AI Assistant
+          <NavLink href="/careers" onClick={closeMobileMenu}>
+            Careers
           </NavLink>
           <NavLink
             href="https://youtube.com/playlist?list=PL9tzQn_TEuFWMuPiQOXhaE5lpOTnxLPZY"
@@ -130,7 +130,7 @@ const Navbar = () => {
           >
             AI Office Hours
           </NavLink>
-          <NavLink href="/proposals" onClick={closeMobileMenu}>
+          <NavLink href="/rfps" onClick={closeMobileMenu}>
             Proposals
           </NavLink>
           <NavLink href="/blog" onClick={closeMobileMenu}>
