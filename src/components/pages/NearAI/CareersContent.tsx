@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import { ArrowRight } from 'lucide-react';
+import Script from 'next/script';
 
 const GlowingText = ({ children }: { children: React.ReactNode }) => (
   <span className="text-[#00EB9A]">{children}</span>
@@ -27,10 +28,10 @@ const CTAButton = ({ onClick, children, primary = false, className = '' }: CTABu
       className={`
         inline-flex items-center justify-center px-8 py-3 rounded-lg font-medium transition-all
         ${
-          primary
-            ? 'bg-[#00EB9A] text-black hover:bg-[#00EB9A]/90 shadow-[#00EB9A]/30 shadow-lg hover:shadow-xl'
-            : 'bg-black/30 text-white hover:text-[#00EB9A] hover:bg-black/40 border border-[#00EB9A]/20'
-        }
+        primary
+          ? 'bg-[#00EB9A] text-black hover:bg-[#00EB9A]/90 shadow-[#00EB9A]/30 shadow-lg hover:shadow-xl'
+          : 'bg-black/30 text-white hover:text-[#00EB9A] hover:bg-black/40 border border-[#00EB9A]/20'
+      }
         ${className}
         group
       `}
@@ -50,6 +51,11 @@ const CareersContent = () => {
     openPositionsRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
+
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
+  const loadGreenhouse = () => Grnhse.Iframe.load();
+
   return (
     <div className="pt-32 pb-20">
       {/* Hero Section */}
@@ -59,7 +65,8 @@ const CareersContent = () => {
           <h1 className="text-5xl md:text-6xl font-bold mb-8 text-white drop-shadow-[0_0_30px_rgba(0,235,154,0.3)]">
             Join Our Team
           </h1>
-          <p className="text-2xl md:text-3xl font-light mx-auto max-w-3xl bg-clip-text text-transparent bg-gradient-to-r from-white via-white to-[#AFD0C5] mb-10">
+          <p
+            className="text-2xl md:text-3xl font-light mx-auto max-w-3xl bg-clip-text text-transparent bg-gradient-to-r from-white via-white to-[#AFD0C5] mb-10">
             Build the future of user-owned AI with us!
           </p>
           <div className="flex justify-center">
@@ -77,11 +84,11 @@ const CareersContent = () => {
             <SectionTitle>Our Vision</SectionTitle>
             <SectionSubtitle>
               One day, all people will have access to free AI that optimizes their{' '}
-              <GlowingText>well being</GlowingText>, not company profit.
+              <GlowingText>wellbeing</GlowingText>, not company profit.
             </SectionSubtitle>
             <p className="text-lg text-gray-300 mb-8">
-              We're building technology that puts users first, not shareholders. Our mission is to 
-              create AI that is powerful, accessible, and aligned with human values. Join us on this 
+              We're building technology that puts users first, not shareholders. Our mission is to
+              create AI that is powerful, accessible, and aligned with human values. Join us on this
               journey to redefine the future of AI.
             </p>
           </div>
@@ -94,53 +101,58 @@ const CareersContent = () => {
           <div className="max-w-3xl mx-auto">
             <SectionTitle>Our Culture</SectionTitle>
             <p className="text-lg text-gray-300 mb-12">
-              We're a remote-first team that values deep work, collaboration, and impact. We believe 
-              in giving our team the autonomy and resources they need to do their best work, wherever 
+              We're a remote-first team that values deep work, collaboration, and impact. We believe
+              in giving our team the autonomy and resources they need to do their best work, wherever
               they are in the world.
             </p>
-            
+
             <div className="mt-16">
               <h3 className="text-2xl font-medium mb-8">
-                Usually this is where you'd see photos of our office and smiling employees at company events. 
-                But we're a full-remote company and we tend to focus on our work, so here's some AI-generated photos instead:
+                Usually this is where you'd see photos of our office and smiling employees at company events.
+                But we're a fully-remote company and we tend to focus on our work, so here's some AI-generated photos
+                instead:
               </h3>
-              
+
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10">
-                <div className="bg-black/40 border border-gray-800 rounded-lg overflow-hidden shadow-lg shadow-black/50 hover:shadow-[#004030]/30 transition-all duration-300">
+                <div
+                  className="bg-black/40 border border-gray-800 rounded-lg overflow-hidden shadow-lg shadow-black/50 hover:shadow-[#004030]/30 transition-all duration-300">
                   <div className="aspect-square overflow-hidden">
-                    <img 
-                      src="/images/office.jpeg" 
-                      alt="AI-generated office space" 
+                    <img
+                      src="/images/office.jpeg"
+                      alt="AI-generated office space"
                       className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                     />
                   </div>
                 </div>
-                
-                <div className="bg-black/40 border border-gray-800 rounded-lg overflow-hidden shadow-lg shadow-black/50 hover:shadow-[#004030]/30 transition-all duration-300">
+
+                <div
+                  className="bg-black/40 border border-gray-800 rounded-lg overflow-hidden shadow-lg shadow-black/50 hover:shadow-[#004030]/30 transition-all duration-300">
                   <div className="aspect-square overflow-hidden">
-                    <img 
-                      src="/images/standup.jpeg" 
-                      alt="AI-generated team members in a meeting" 
+                    <img
+                      src="/images/standup.jpeg"
+                      alt="AI-generated team members in a meeting"
                       className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                     />
                   </div>
                 </div>
-                
-                <div className="bg-black/40 border border-gray-800 rounded-lg overflow-hidden shadow-lg shadow-black/50 hover:shadow-[#004030]/30 transition-all duration-300">
+
+                <div
+                  className="bg-black/40 border border-gray-800 rounded-lg overflow-hidden shadow-lg shadow-black/50 hover:shadow-[#004030]/30 transition-all duration-300">
                   <div className="aspect-square overflow-hidden">
-                    <img 
-                      src="/images/softball.jpeg" 
-                      alt="AI-generated team activity" 
+                    <img
+                      src="/images/softball.jpeg"
+                      alt="AI-generated team activity"
                       className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                     />
                   </div>
                 </div>
-                
-                <div className="bg-black/40 border border-gray-800 rounded-lg overflow-hidden shadow-lg shadow-black/50 hover:shadow-[#004030]/30 transition-all duration-300">
+
+                <div
+                  className="bg-black/40 border border-gray-800 rounded-lg overflow-hidden shadow-lg shadow-black/50 hover:shadow-[#004030]/30 transition-all duration-300">
                   <div className="aspect-square overflow-hidden">
-                    <img 
-                      src="/images/pizza.jpeg" 
-                      alt="AI-generated team lunch" 
+                    <img
+                      src="/images/pizza.jpeg"
+                      alt="AI-generated team lunch"
                       className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                     />
                   </div>
@@ -157,23 +169,19 @@ const CareersContent = () => {
           <div className="mx-auto">
             <SectionTitle>Open Positions</SectionTitle>
             <p className="text-lg text-gray-300 mb-12">
-              Join our team and help us build the future of user-owned AI. We're looking for passionate individuals who are excited about our mission.
+              Join our team and help us build the future of user-owned AI. We're looking for passionate individuals who
+              are excited about our mission.
             </p>
-            
+
             {/* Greenhouse Jobs Board */}
-            <div className="mt-10 bg-black/40 border border-gray-800 rounded-lg overflow-hidden p-2">
-              <iframe
-                src="https://boards.greenhouse.io/embed/job_board?for=nearai"
-                width="100%"
-                height="800px"
-                frameBorder="0"
-                className="bg-white"
-                title="NEAR AI Job Board"
-              />
+            <div className="mt-10 bg-black/40 border border-gray-800 rounded-lg p-2">
+              <div id="grnhse_app"></div>
             </div>
           </div>
         </div>
       </section>
+      <Script src="https://boards.eu.greenhouse.io/embed/job_board/js?for=nearai" strategy="lazyOnload"
+              onReady={loadGreenhouse} />
     </div>
   );
 };
