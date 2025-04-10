@@ -2,6 +2,7 @@ import React from 'react';
 
 import AnimatedBackground from '@/components/pages/NearAI/AnimatedBackground';
 import Navbar from '@/components/pages/NearAI/Navbar';
+import Footer from '@/components/pages/NearAI/Footer';
 
 interface PageWrapperProps {
   children: React.ReactNode;
@@ -19,6 +20,7 @@ const PageWrapper = ({ children, className = '', withAnimation = true }: PageWra
       <div className="relative z-10">
         <Navbar />
         <main className={className}>{children}</main>
+        <Footer />
       </div>
     </div>
   );
