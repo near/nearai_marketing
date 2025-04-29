@@ -150,7 +150,7 @@ const ProductSection = () => {
                   </a>
                 </span>,
               ]}
-              cta={{ text: 'Get In Touch', href: 'https://airtable.com/appc0ZVhbKj8hMLvH/pag4dQKP3KF3qrTFo/form' }}
+              cta={{ text: 'Get In Touch', href: 'https://airtable.com/appc0ZVhbKj8hMLvH/pagsVjkk5LZ66MbJm/form' }}
               trackingId="product_contact_us"
             />
           </div>

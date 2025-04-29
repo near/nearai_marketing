@@ -61,7 +61,7 @@ const CTASection = () => {
                 Chat with Assistant
               </CTAButton>
               <CTAButton
-                href="https://airtable.com/appc0ZVhbKj8hMLvH/pag4dQKP3KF3qrTFo/form"
+                href="https://airtable.com/appc0ZVhbKj8hMLvH/pagsVjkk5LZ66MbJm/form"
                 external
                 trackingId="cta_contact_us"
               >

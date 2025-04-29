@@ -12,7 +12,7 @@ export const rfps = [
     author: {
       name: 'Cameron Dennis',
     },
-    submitProposalUrl: 'https://airtable.com/appc0ZVhbKj8hMLvH/pag4dQKP3KF3qrTFo/form',
+    submitProposalUrl: 'https://airtable.com/appc0ZVhbKj8hMLvH/pagsVjkk5LZ66MbJm/form',
     content: `
       <div>
         <section>
