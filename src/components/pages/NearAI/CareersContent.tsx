@@ -100,18 +100,23 @@ const CareersContent = () => {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto">
             <SectionTitle>Our Culture</SectionTitle>
+            <p className="text-lg text-gray-300 mb-6">
+              We're an in-person team that thrives on focus, collaboration, and creating meaningful impact together. We believe in giving our people the right environment and support to do their best work — not just side by side, but as part of a community that shares ideas, energy, and ambitions every day.
+            </p>
+
+            <p className="text-lg text-gray-300 mb-6">
+              What you see below is how AI picture "teamwork": aliens at stand-ups, zero-gravity brainstorming, interplanetary baseball, and pizza parties that somehow break the laws of physics. Honestly? Not a bad guess.
+            </p>
+
+            <p className="text-lg text-gray-300 mb-6">
+              Yes, we work on-site. No, our office isn't in space (yet). AI just has a vivid imagination.
+            </p>
+
             <p className="text-lg text-gray-300 mb-12">
-              We're a remote-first team that values deep work, collaboration, and impact. We believe
-              in giving our team the autonomy and resources they need to do their best work, wherever
-              they are in the world.
+              In reality, our culture is built on the same spirit — creative, collaborative, a little unconventional. We show up every day in person to spark ideas, push boundaries, and occasionally laugh at what happens when you ask AI to "show us at work."
             </p>
 
             <div className="mt-16">
-              <h3 className="text-2xl font-medium mb-8">
-                Usually this is where you'd see photos of our office and smiling employees at company events.
-                But we're a fully-remote company and we tend to focus on our work, so here's some AI-generated photos
-                instead:
-              </h3>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10">
                 <div
